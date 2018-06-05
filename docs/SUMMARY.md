@@ -17,6 +17,7 @@
 * [View decorators](./Decorators.md)
 * [Context processors](./ContextProcessors.md)
 * [Frontend context](./FrontendContext.md)
+* [Audit trail](./AuditTrail.md)
 * [Forms](./Forms.md)
 * [Cache](./Cache.md)
 * [Sending mails](./Mails.md)
