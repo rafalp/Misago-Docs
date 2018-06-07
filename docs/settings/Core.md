@@ -138,6 +138,11 @@ In case of more events than specified being found, oldest events will be truncat
 Hourly limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
 
 
+## `MISAGO_IP_STORE_TIME`
+
+Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
+
+
 ## `MISAGO_LOGO`
 
 URL to logo image, relative to `STATIC_URL`.
