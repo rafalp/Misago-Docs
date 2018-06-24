@@ -123,7 +123,14 @@ Function used to create unique avatar for this user. Allows for customization of
 
 ## `MISAGO_ENABLE_DELETE_OWN_ACCOUNT`
 
-Allow users to delete their own accounts? Providing such feature is required by EU law from entities that process europeans personal data.
+Lets users delete their own account on the site without having to contact site administrators.
+
+This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
+
+
+## `MISAGO_ENABLE_DOWNLOAD_OWN_DATA`
+
+Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
 
 
 ## `MISAGO_EVENTS_PER_PAGE`
