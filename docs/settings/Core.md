@@ -19,6 +19,16 @@ Url (relative to `STATIC_URL`) to file that should be served if user has request
 List of Misago ACL framework extensions.
 
 
+## `MISAGO_ADDRESS`
+
+Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to site users.
+
+
+##### Note
+
+On Misago admin panel home page you will find a message telling you if you have entered the correct value, or what value is correct in case you've didn't.
+
+
 ## `MISAGO_ADMIN_NAMESPACES`
 
 Link namespaces that are administrator-only areas that require additional security from Misago. Users will have to re-authenticate themselves to access those namespaces, even if they are already signed in your frontend. In addition they will be requested to reauthenticated if they were inactive in those namespaces for certain time.
