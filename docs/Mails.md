@@ -19,6 +19,7 @@ Build e-mail message using supplied template name and (optionally) context. Temp
 Email templates are always passed following context values:
 
 * `SITE_ADDRESS` - The site address set in `MISAGO_ADDRESS` setting.
+* `SITE_HOST` - The site host extracted from the `MISAGO_ADDRESS` (eg. `mycommunity.com` for `https://mycommunity.com/`).
 * `LANGUAGE_CODE` - Valid language code that can be used as value for `<html>` `lang` attribute.
 * `LOGIN_URL` - The URL to login view specified in the `LOGIN_URL` setting.
 * `user` - User model instance representing the message recipient.
