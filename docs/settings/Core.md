@@ -328,11 +328,11 @@ List of clasess defining thread types.
 This settings allows you to decide wheter of not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
 
 
-## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_AFTER_HOURS`
+## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_IN_HOURS`
 
 Number of hours for which user data should be available for download. When data download is marked as expired, data archive associated with it is deleted.
 
-Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is configured to be ran.
+Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is set to be ran.
 
 
 ## `MISAGO_USER_DATA_DOWNLOADS_WORKING_DIR`
