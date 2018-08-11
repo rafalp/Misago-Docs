@@ -121,6 +121,13 @@ Date format used by Misago `compact_date` filter for dates in past years.
 Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
 
 
+## `MISAGO_DELETE_NEW_INACTIVE_USERS_OLDER_THAN_DAYS`
+
+Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
+
+To disable automatic deletion of new user accounts, change this setting to 0.
+
+
 ## `MISAGO_DIALY_POST_LIMIT`
 
 Dialy limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
@@ -158,11 +165,6 @@ Hourly limit of posts that may be posted from single account. Fail-safe for situ
 ## `MISAGO_IP_STORE_TIME`
 
 Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
-
-
-## `MISAGO_LOGO`
-
-URL to logo image, relative to `STATIC_URL`.
 
 
 ## `MISAGO_LOGIN_API_URL`
