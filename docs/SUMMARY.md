@@ -8,6 +8,7 @@
   * [Core settings](./settings/Core.md)
   * [Database settings](./settings/Database.md)
 * [Coding style](./CodingStyle.md)
+* [GDPR Compliance Guide](./GDPRGuide.md)
 * [Social authentication](./SocialAuth.md)
 * [User rank styles](./UserRankStyles.md)
 * [Category styles](./CategoryStyles.md)

@@ -4,6 +4,13 @@ Template Tags Reference
 Misago defines plenty of custom tags and filters for use by template authors.
 
 
+## `misago_absoluteurl`
+
+### `{% absoluteurl %}`
+
+This tag accepts same arguments as default `{% url %}` tag from Django, except it uses the `MISAGO_ADDRESS` setting to render the absolute URL suitable for using in e-mails.
+
+
 ## `misago_batch`
 
 There are situations when you want to slice list of items in template into sublists, e.g. when displaying grid of items in HTML it makes more sense to split iteration into two steps: iteration over rows and items in each row.
