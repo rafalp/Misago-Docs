@@ -19,6 +19,16 @@ Url (relative to `STATIC_URL`) to file that should be served if user has request
 List of Misago ACL framework extensions.
 
 
+## `MISAGO_ADDRESS`
+
+Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to site users.
+
+
+##### Note
+
+On Misago admin panel home page you will find a message telling you if you have entered the correct value, or what value is correct in case you've didn't.
+
+
 ## `MISAGO_ADMIN_NAMESPACES`
 
 Link namespaces that are administrator-only areas that require additional security from Misago. Users will have to re-authenticate themselves to access those namespaces, even if they are already signed in your frontend. In addition they will be requested to reauthenticated if they were inactive in those namespaces for certain time.
@@ -111,6 +121,13 @@ Date format used by Misago `compact_date` filter for dates in past years.
 Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
 
 
+## `MISAGO_DELETE_NEW_INACTIVE_USERS_OLDER_THAN_DAYS`
+
+Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
+
+To disable automatic deletion of new user accounts, change this setting to 0.
+
+
 ## `MISAGO_DIALY_POST_LIMIT`
 
 Dialy limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
@@ -123,7 +140,14 @@ Function used to create unique avatar for this user. Allows for customization of
 
 ## `MISAGO_ENABLE_DELETE_OWN_ACCOUNT`
 
-Allow users to delete their own accounts? Providing such feature is required by EU law from entities that process europeans personal data.
+Lets users delete their own account on the site without having to contact site administrators.
+
+This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
+
+
+## `MISAGO_ENABLE_DOWNLOAD_OWN_DATA`
+
+Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
 
 
 ## `MISAGO_EVENTS_PER_PAGE`
@@ -138,9 +162,9 @@ In case of more events than specified being found, oldest events will be truncat
 Hourly limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
 
 
-## `MISAGO_LOGO`
+## `MISAGO_IP_STORE_TIME`
 
-URL to logo image, relative to `STATIC_URL`.
+Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
 
 
 ## `MISAGO_LOGIN_API_URL`
@@ -304,6 +328,18 @@ List of clasess defining thread types.
 ## `MISAGO_USE_STOP_FORUM_SPAM`
 
 This settings allows you to decide wheter of not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
+
+
+## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_IN_HOURS`
+
+Number of hours for which user data should be available for download. When data download is marked as expired, data archive associated with it is deleted.
+
+Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is set to be ran.
+
+
+## `MISAGO_USER_DATA_DOWNLOADS_WORKING_DIR`
+
+Path to the directory that Misago should use to prepare user data downloads. Should not be accessible from internet.
 
 
 ## `MISAGO_USERS_PER_PAGE`
