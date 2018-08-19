@@ -26,6 +26,7 @@ Articles 12 to 14 of GDPR require site administrators to inform the users about 
 
 - Who is data administrator on the site, where are they located and how can they be contacted.
 - What kind of personal data is being processed by the site, why, for how long, who has access to it and how is it being protected.
+- Where is data being storer physically, which company are servers leased from.
 - That they have the right to know what data about you is being held and processed.
 - That they have the right to rectify any inaccurate personal data.
 - That they have the right to be forgotten.
