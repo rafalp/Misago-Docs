@@ -11,7 +11,7 @@ Getting on the server
 
 Do you remember this email from server setup guide?
 
-![E-mail with droplet details](../images/Setup/do_step_10.png)
+![E-mail with droplet details](../images/Setup/do_step_10.jpg)
 
 It contains three bits of information that we will use to get on server and setup Misago:
 
@@ -27,15 +27,15 @@ If you are on Linux or Mac, you are ready to continue. If you are on Windows, yo
 
 After running this command, your terminal will attempt to connect to your droplet using `root` username. Because this will be first connection to unknown server, you will be asked if you are sure. Confirm by entering `yes` and pressing enter:
 
-![E-mail with droplet details](../images/Setup/misago_step_1.png)
+![E-mail with droplet details](../images/Setup/misago_step_1.jpg)
 
 You will now be asked for password. Use one you've received in e-mail from Digital Ocean and confirm with enter. Log in should complete and you should see welcome message from your server:
 
-![Droplet welcome screen](../images/Setup/misago_step_2.png)
+![Droplet welcome screen](../images/Setup/misago_step_2.jpg)
 
 As you see at bottom of message, you are now forced to enter **current** password, and then **new** password. "root" is special user that can do **EVERYTHING** on the server so make sure you use LONG password for it. I've used password manager to generate 64 characters long password:
 
-![Password changed](../images/Setup/misago_step_3.png)
+![Password changed](../images/Setup/misago_step_3.jpg)
 
 You can now use your new password to log in your server as root.
 
@@ -54,7 +54,7 @@ Commands to run are following:
     3. `apt-get dist-upgrade`
     4. `do-release-upgrade`
 
-![No new updates were found](../images/Setup/misago_step_4.png)
+![No new updates were found](../images/Setup/misago_step_4.jpg)
 
 
 Enable brute-force protection
@@ -78,11 +78,11 @@ Run following command:
 
 This will download latest version of Misago from [GitHub](https://github.com/rafalp/misago_docker) to `misago_docker` directory:
 
-![Misago downloaded](../images/Setup/misago_step_5.png)
+![Misago downloaded](../images/Setup/misago_step_5.jpg)
 
 Run `cd misago_docker` command to enter directory containing our Misago site. You can "look around" the directory you are currently in using `ls` command:
 
-![Downloaded files](../images/Setup/misago_step_6.png)
+![Downloaded files](../images/Setup/misago_step_6.jpg)
 
 We see that bunch of files and directories have been downloaded, including `LICENSE`, `appctl`, `backups`, `logs`, and more. Your list may be different depending on changes happening in new Misago versions.
 
@@ -96,7 +96,7 @@ This is executable script that Misago provides for administrators to make it eas
 
 To run it, enter `./appctl`. This will result in list of available options being displayed:
 
-![appctl options](../images/Setup/misago_step_7.png)
+![appctl options](../images/Setup/misago_step_7.jpg)
 
 We see that we can use `setup` option to setup new Misago site. To use option, run `./appctl` followed with option's name:
     

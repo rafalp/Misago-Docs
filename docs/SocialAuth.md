@@ -17,11 +17,11 @@ Great majority of authentication providers require you to register your site as 
 
 Start by going to [Developer settings](https://github.com/settings/developers) page, and make sure you are in the "OAuth Apps" section. If you don't any apps yet, it will look like this:
 
-![OAuth Apps](./images/SocialAuth/github_step_1.png)
+![OAuth Apps](./images/SocialAuth/github_step_1.jpg)
 
 Click the "Register a new application" button. This will move you to page where you will have to fill in details for your app:
 
-![GitHub App Create](./images/SocialAuth/github_step_2.png)
+![GitHub App Create](./images/SocialAuth/github_step_2.jpg)
 
 Fill in following data:
 
@@ -47,7 +47,7 @@ To get start with GitHub, you don't have to meet any of those requirements. In f
 
 You should be redirected to page displaying your application name and settings:
 
-![GitHub App Settings](./images/SocialAuth/github_step_3.png)
+![GitHub App Settings](./images/SocialAuth/github_step_3.jpg)
 
 You can return to this page any time by going to your [Developer settings](https://github.com/settings/developers) and clicking it on list of apps.
 
@@ -71,11 +71,11 @@ AUTHENTICATION_BACKENDS = [
 
 You will need to module that will handle GitHub authentication to this list. Go to [list of backends implemented by Python Social Auth](http://python-social-auth.readthedocs.io/en/latest/backends/index.html) and find "GitHub" on it:
 
-![GitHub App Settings](./images/SocialAuth/github_step_4.png)
+![GitHub App Settings](./images/SocialAuth/github_step_4.jpg)
 
 This is suprising. Looks like there is not one but 7 GitHub backends available. Click the first one, named simply "GitHub", and this will take you to [documentation](http://python-social-auth.readthedocs.io/en/latest/backends/github.html) explaining how to add GitHub auth in your site:
 
-![GitHub Backend Settings](./images/SocialAuth/github_step_5.png)
+![GitHub Backend Settings](./images/SocialAuth/github_step_5.jpg)
 
 As it says, you should add ``'social_core.backends.github.GithubOAuth2',`` to your ``AUTHENTICATION_BACKENDS``:
 
