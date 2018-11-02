@@ -81,6 +81,7 @@ You will also receive an e-mail with access credentials for your droplet:
 
 ![E-mail with droplet details](../images/Setup/do_step_10.png)
 
+
 -----
 
 Next guide: [Point domain at your server](./Domain.md)

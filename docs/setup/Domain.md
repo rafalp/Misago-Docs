@@ -63,6 +63,7 @@ I see from `ping` result that `python-forum.pl` domain that I am using is pointi
 
 > **Note:** If you want to stop the `ping` command, press `ctrl + c` (or `cmd + c` on Mac) key combination while your terminal/cmd window is focused. This will send message to the program that it should stop execution.
 
+
 -----
 
 Next guide: [Setup Misago on your Server](./Misago.md)

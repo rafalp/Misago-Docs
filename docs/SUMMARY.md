@@ -5,6 +5,7 @@
   * [Create server on Digital Ocean](./setup/Server.md)
   * [Point domain at your server](./setup/Domain.md)
   * [Setup Misago on your Server](./setup/Misago.md)
+  * [Upgrading your Misago to latest version](./setup/Upgrading.md)
 * [Settings](./settings/README.md)
   * [Core settings](./settings/Core.md)
   * [Database settings](./settings/Database.md)
@@ -35,3 +36,4 @@
 * [Shortcuts](./Shortcuts.md)
 * [Thread store](./ThreadStore.md)
 * [View errors](./ViewErrors.md)
+* [Locales](./Locales.md)
