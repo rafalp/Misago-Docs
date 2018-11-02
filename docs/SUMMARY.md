@@ -1,9 +1,10 @@
 # Table of contents
 
 * [Introduction](./README.md)
-* [Setup and maintenance](./setup/README.md)
-  * [Updating from Misago 0.5](./setup/UpdatingFrom05.md)
-  * [Update paths](./setup/UpdatePaths.md)
+* [Setup](./setup/README.md)
+  * [Create server on Digital Ocean](./setup/Server.md)
+  * [Point domain at your server](./setup/Domain.md)
+  * [Setup Misago on your Server](./setup/Misago.md)
 * [Settings](./settings/README.md)
   * [Core settings](./settings/Core.md)
   * [Database settings](./settings/Database.md)
