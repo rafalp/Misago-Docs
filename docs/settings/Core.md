@@ -1,7 +1,7 @@
-Core Settings
-=============
+Core settings reference
+=======================
 
-Those settings are set in `settings.py` file with defaults defined in `misago.conf.defaults` module. 
+This is the reference of all [core settings](./README.md#core-settings) defined by Misago. Reference of settings defined by Django can be found on [Django documentation](https://docs.djangoproject.com/en/{{ book.django_version }}/ref/settings/).
 
 
 ## `MISAGO_ACL_EXTENSIONS`
