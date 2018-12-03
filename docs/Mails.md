@@ -14,7 +14,7 @@ Build e-mail message using supplied template name and (optionally) context. Temp
 * `subject` - A string.
 * `template` - A string.
 * `sender` - User model instance for message sender.
-* `context` - The optional dictionary with extra context values that should be used in template render.
+* `context` - The dictionary with context values that should be used in template render.
 
 Email templates are always passed following context values:
 
@@ -37,7 +37,7 @@ Shortcut function that calls `build_mail` to build message, then sends it to use
 * `subject` - A string.
 * `template` - A string.
 * `sender` - User model instance for message sender.
-* `context` - The optional dictionary with extra context values that should be available for message templates.
+* `context` - The dictionary with context values that should be available for message templates.
 
 
 ## mail_users(recipients, subject, template, sender=None, context=None)
@@ -48,4 +48,4 @@ Same as `mail_user`, but instead of sending message to single recipient, it send
 * `subject` - A string.
 * `template` - A string.
 * `sender` - User model instance for message sender.
-* `context` - The optional dictionary with extra context values that should be available for message templates.
+* `context` - The dictionary with context values that should be available for message templates.
