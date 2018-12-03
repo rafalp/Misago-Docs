@@ -26,12 +26,14 @@ This method is available only during http request life-cycle. If you need to acc
 ```python
 from django.core.management.base import BaseCommand
 
+from misago.cache.versions import get_cache_versions
 from misago.conf.dynamicsettings import DynamicSettings
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        settings = DynamicSettings()
+        cache_versions = get_cache_versions()
+        settings = DynamicSettings(cache_versions)
         self.stdout.write("Forum name: %s" % settings.forum_name)
 ```
 
