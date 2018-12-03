@@ -7,6 +7,7 @@
   * [Setup Misago on your Server](./setup/Misago.md)
   * [Upgrading your Misago to latest version](./setup/Upgrading.md)
 * [Settings](./settings/README.md)
+  * [Accessing settings](./settings/README.md)
   * [Core settings reference](./settings/Core.md)
   * [Dynamic settings reference](./settings/Dynamic.md)
 * [Coding style](./CodingStyle.md)
