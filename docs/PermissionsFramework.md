@@ -76,7 +76,15 @@ for category in categories
         # ACLs are easy to check in templates too now!
 ```
 
-Ultimately, permission modules may expose permission checking functions:
+In templates user acl is also made available as `user_acl` variable:
+
+```
+{% if user_acl.can_search %}
+    {% include "search_form.html" %}
+{% endif %}
+```
+
+Lastly, permission modules may expose permission checking functions:
 
 ```python
 from misago.category.permissions import allow_browse_category:
@@ -88,7 +96,7 @@ allow_browse_category(user_acl, category)
 
 Because ACL framework is very flexible, different features can have different ways to check their permissions.
 
-Lastly, Misago adds `Misago User ACL` option to the Django Debug Toolbar menu. This page display user roles permissions as well as final ACL assigned to current request.
+Misago adds `Misago User ACL` option to the Django Debug Toolbar menu. This page display user roles permissions as well as final ACL assigned to current request.
 
 
 ## Extending permissions system
