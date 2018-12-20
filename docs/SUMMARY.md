@@ -35,6 +35,5 @@
 * [Search filters](./SearchFilters.md)
 * [Template tags](./TemplateTags.md)
 * [Shortcuts](./Shortcuts.md)
-* [Thread store](./ThreadStore.md)
 * [View errors](./ViewErrors.md)
 * [Locales](./Locales.md)
