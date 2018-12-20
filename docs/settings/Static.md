@@ -1,7 +1,7 @@
-Core settings reference
+Static settings reference
 =======================
 
-This is the reference of all [core settings](./README.md#core-settings) defined by Misago. Reference of settings defined by Django can be found on [Django documentation](https://docs.djangoproject.com/en/{{ book.django_version }}/ref/settings/).
+This is the reference of all [static settings](./README.md#static-settings) defined by Misago. Reference of settings defined by Django can be found on [Django documentation](https://docs.djangoproject.com/en/{{ book.django_version }}/ref/settings/).
 
 
 ## `MISAGO_ACL_EXTENSIONS`
@@ -172,7 +172,7 @@ Items in Misago are usually indexed in search engine on save or update. If you c
 
 ## `MISAGO_SLUGIFY`
 
-Path to function or callable used by Misago to generate slugs. Defaults to `misago.core.slugify.default`. Use this function if you want to customize slugs generation on your community.
+Path to function or callable used by Misago to generate slugs. Defaults to `misago.static.slugify.default`. Use this function if you want to customize slugs generation on your community.
 
 
 ## `MISAGO_STYLE`

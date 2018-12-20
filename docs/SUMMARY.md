@@ -8,7 +8,7 @@
   * [Upgrading your Misago to latest version](./setup/Upgrading.md)
 * [Settings](./settings/README.md)
   * [Accessing settings](./settings/README.md)
-  * [Core settings reference](./settings/Core.md)
+  * [Static settings reference](./settings/Static.md)
   * [Dynamic settings reference](./settings/Dynamic.md)
 * [Coding style](./CodingStyle.md)
 * [GDPR Compliance Guide](./GDPRGuide.md)

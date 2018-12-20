@@ -8,7 +8,7 @@ Misago settings belong to one of two groups:
 
 Those settings are stored in database and can be changed at the runtime using interface provided by admin control panel.
 
-[Database settings reference](./Database.md)
+[Dynamic settings reference](./Dynamic.md)
 
 
 ### Accessing dynamic settings in python code
@@ -24,7 +24,7 @@ def my_view(request):
 This method is available only during http request life-cycle. If you need to access dynamic settings outside of it (eg. in management command), you will have to instantiate `misago.conf.dynamicsettings.DynamicSettings` manually:
 
 ```python
-from django.core.management.base import BaseCommand
+from django.static.management.base import BaseCommand
 
 from misago.cache.versions import get_cache_versions
 from misago.conf.dynamicsettings import DynamicSettings
@@ -60,18 +60,18 @@ def my_view(request):
 ```
 
 
-## Core settings
+## Static settings
 
-Those settings must be available when Misago starts and are not changeable from admin control panel.
+Those settings must be available when Misago starts and are not changeable at the runtime (e.g. from admin control panel), hence the name "static".
 
 To define or change those settings, you need to edit your site's `settings.py`
 
-[Core settings reference](./Core.md)
+[Static settings reference](./Static.md)
 
 
-### Accessing core settings in python code
+### Accessing static settings in python code
 
-Core settings are available as attributes on `settings` object importable from `misago.conf.settings`:
+Static settings are available as attributes on `settings` object importable from `misago.conf.settings`:
 
 ```python
 from misago.conf import settings
@@ -82,7 +82,7 @@ if settings.MISAGO_USE_STOP_FORUM_SPAM:
 
 `misago.conf.settings` first attempts to read setting value in your site's `settings.py`, and when its not defined here, uses default value defined inside Misago source code.
 
-`misago.conf.settings` is fully compatible with `django.conf.settings`. If your code is not accessing `MISAGO_*` settings, you can use either of those approaches for accessing core configuration. `misago.conf.settings` is only recommended when you are using `MISAGO_*` settings in your code.
+`misago.conf.settings` is fully compatible with `django.conf.settings`. If your code is not accessing `MISAGO_*` settings, you can use either of those approaches for accessing static configuration. `misago.conf.settings` is only recommended when you are using `MISAGO_*` settings in your code.
 
 
 ### Django Settings Reference
