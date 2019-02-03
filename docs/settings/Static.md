@@ -175,15 +175,6 @@ Items in Misago are usually indexed in search engine on save or update. If you c
 Path to function or callable used by Misago to generate slugs. Defaults to `misago.static.slugify.default`. Use this function if you want to customize slugs generation on your community.
 
 
-## `MISAGO_STYLE`
-
-This dict allows you override some CSS classes used by Misago in its style. For example, to specify custom CSS classess to use in Misago's navbar, you may add following to your `settings.py`:
-
-    MISAGO_STYLE = {
-        'navbar': 'navbar-dark bg-primary',
-    }
-
-
 ## `MISAGO_THREADS_ON_INDEX`
 
 Change this setting to `False` to display categories list instead of threads list on board index.
