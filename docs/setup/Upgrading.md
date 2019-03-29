@@ -7,7 +7,7 @@ To upgrade your Misago site, connect to the server, do `cd ~/misago_docker` to m
 ./appctl upgrade
 ```
 
-You will be asked to confirm that you wish to upgrade your site to latest available version.
+You will be asked to confirm that you wish to upgrade your site to the latest available version.
 
 Upgrade process will back up your data, then pull latest code from [GitHub repository](https://github.com/rafalp/misago_docker). After pull completes successfully, your site will be stopped and updated to latest version.
 
