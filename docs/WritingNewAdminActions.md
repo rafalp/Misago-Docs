@@ -192,7 +192,7 @@ Registers new namespace in admin links hierarchy.
 
 * `path` - Path prefix for links within this namespace. For example `r'^users/'`.
 * `namespace` - Non-prefixed (eg. without `misago:admin` part) namespace name.
-* `parent` - Optional. Name of parent namespace (eg. `users:accounts`).
+* `parent` - Optional. Name of parent namespace (eg. `users`).
 
 
 #### `patterns(namespace, *urlpatterns)`
@@ -208,21 +208,46 @@ Your urls have to be discoverable by your users. Easiest way is to do this is to
 
 `misago.admin.hierarchy.AdminHierarchyBuilder` class available as `site` argument passed to `register_navigation_nodes` method of your `MisagoAdminExtension` class. It has plenty of functions, but it's public api consists of one method:
 
-`add_node(name=None, icon=None, parent='misago:admin', after=None, before=None, namespace=None, link=None)`
+`add_node(name=None, icon=None, parent=None, after=None, before=None, namespace=None, link="index")`
 
 This method accepts following named arguments:
 
-* `parent` - name of parent namespace under which this action link is displayed.
-* `after` - link before which one this one should be displayed.
-* `before` - link after which one this one should be displayed.
+* `parent` - name of parent namespace under which this action link is displayed. Should exclude the `misago:admin` part.
+* `after` - link before which one this one should be displayed. Should exclude the `misago:admin`, but has to include `link` part, eg. `users:index`.
+* `before` - link after which one this one should be displayed. Should exclude the `misago:admin`, but has to include `link` part, eg. `users:index`.
 * `namespace` - this link namespace.
-* `link` - link name.
-* `name` - link title.
-* `icon` - link icon (both [Glyphicons](http://getbootstrap.com/components/#glyphicons) and [Font Awesome](http://fontawesome.io/icons/) are supported).
+* `link` - link name, defaults to `index`.
+* `name` - page title.
+* `icon` - link icon ([see available icons list](http://fontawesome.io/icons/)).
 
 Only last three arguments are required. `after` and `before` arguments are exclusive. If you specify both, this will result in an error.
 
-Misago Admin supports three levels of hierarchy. Each level should corelate to new namespace nested under `misago:admin`. Depending on complexity of your app's admin, it can define links that are one level deep, or three levels deep.
+Misago Admin supports two levels of hierarchy. Each level should corelate to new namespace nested under `misago:admin`. Depending on complexity of your app's admin, it can define links that are one level deep, or two levels deep.
+
+
+#### Examples
+
+Below code will register new top-level link that will appear after "Themes" and link to `misago:admin:payments:index`:
+
+```python
+site.add_node(
+    name=_("Payments"),
+    icon="fa fa-money",
+    after="themes:index",
+    namespace="payments",
+)
+
+```
+Below code will register new link under the "Settings" link that will link to `misago:admin:settings:profile-fields:index` and appear under `misago:admin:settings:attachment-types:index`:
+
+```python
+site.add_node(
+    name=_("Profile fields"),
+    parent="settings",
+    after="attachment-types:index",
+    namespace="profile-fields",
+)
+```
 
 
 ### Adding actions to items lists
