@@ -10,7 +10,7 @@ If you intend to be sole user of your app, Django admin will propably be faster 
 
 Unlike Django, Misago admin is not "automagical". This means you will not get complete admin from nowhere by just creating one file and writing 3 lines of code in it. However Misago provides set of basic classes defined in  in `misago.admin.views.generic` module that can offload most of burden of writing views handling items lists and forms from you.
 
-Workflow with those classes is fast and easy to master. First, you define your own mixin (propably extending `AdminBaseMixin`). This mixin will define common properties and behaviours of all admin views, like which model are admin views focused on, how to fetch its instances from database as well as where to seek templates and which message should be used when model could not be found.
+Workflow with those classes is fast and easy to master. First, you define your own mixin (probably extending `AdminBaseMixin`). This mixin will define common properties and behaviours of all admin views, like which model are admin views focused on, how to fetch its instances from database as well as where to seek templates and which message should be used when model could not be found.
 
 Next you define your own views inheriting from your mixin and base views. Misago provides basic views for each of most common scenarios in admin:
 
@@ -35,7 +35,7 @@ Optionally if you don't plan to set up action-specific item not found messages, 
 
 Base class for lists if items. Supports following properties:
 
-* `template` - name of template file located in `templates_dir` used to render this view. Defaults to `list.html`
+* `template_name` - name of template file located in `templates_dir` used to render this view. Defaults to `list.html`
 * `items_per_page` - integer controlling number of items displayed on single page. Defaults to 0 which means no pagination
 * `search_form` - Form type used to construct form for filtering this list. Either this field or `get_search_form` method is required to make list searchable.
 * `ordering` - list of supported sorting methods. List of tuples. Each tuple should countain two items: name of ordering method (eg. "Usernames, descending") and `order_by` argument (`-username`). Defaults to none which means queryset will not be ordered. If contains only one element, queryset is ordered, but option for changing ordering method is not displayed.
@@ -84,18 +84,18 @@ If you add custom mass action to view, besides adding new entry to `mass_actions
 
 Base class for forms views.
 
-* `template` - name of template file located in `templates_dir` used to render this view. Defaults to `form.html`
-* `form` property or **create_form_type** method - `create_form` method is called with `request` as its argument and is expected to return form type that will be used by view. If you need to build form type dynamically, instead of defining `form` property, define your own `create_form`.
+* `template_name` - name of template file located in `templates_dir` used to render this view. Defaults to `form.html`
+* `form_class` property or **get_form_class** method - `get_form_class` method is called with `request` as its argument and is expected to return form type that will be used by view. If you need to build form type dynamically, instead of defining `form_class` property, define your own `get_form_class`.
 
 
-#### `create_form_type(self, request)`
+#### `get_form_class(self, request)`
 
-Returns form type that will be used to create form instance. By default returns value of `form` property.
+Returns form type that will be used to create form instance. By default returns value of `form_class` property.
 
 
-#### `initialize_form(self, FormType, request)`
+#### `get_form(self, form_class, request)`
 
-Initializes either bound or unbound form using request and `FormType` provided.
+Initializes either bound or unbound form using request and `form_class` provided.
 
 
 #### `handle_form(self, form, request)`
