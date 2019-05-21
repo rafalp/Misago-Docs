@@ -34,11 +34,6 @@ Default avatar assigned to new accounts. Can be either `initials` for randomly g
 Default timezone used by guests and newly registered users that haven't changed their timezone prefferences.
 
 
-## forum_branding_text
-
-Allows you to specify default text displayed besides brand logo on your forum.
-
-
 ## forum_name
 
 Forum name, displayed in titles of pages.
@@ -52,6 +47,21 @@ Forum index Meta Description used as value meta description attribute on forum i
 ## forum_index_title
 
 Forum index title. Can be empty string if not set, in which case `forum_name` should be used instead.
+
+
+## logo
+
+Logo image displayed in forum's navbar.
+
+
+## logo_small
+
+Small logo image displayed in forum's compact navbar. When set, it's used instead icon for menu item pointing to forum index.
+
+
+## logo_text
+
+Text displayed in forum's navbar. This text is never included in compact navbar used on small displays.
 
 
 ## post_length_max
