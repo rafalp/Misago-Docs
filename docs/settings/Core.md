@@ -19,11 +19,6 @@ Url (relative to `STATIC_URL`) to file that should be served if user has request
 List of Misago ACL framework extensions.
 
 
-## `MISAGO_ADDRESS`
-
-Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to site users.
-
-
 ##### Note
 
 On Misago admin panel home page you will find a message telling you if you have entered the correct value, or what value is correct in case you've didn't.

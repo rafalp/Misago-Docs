@@ -34,17 +34,27 @@ Default avatar assigned to new accounts. Can be either `initials` for randomly g
 Default timezone used by guests and newly registered users that haven't changed their timezone prefferences.
 
 
+## forum_addess
+
+Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to the site users.
+
+
 ## forum_name
 
 Forum name, displayed in titles of pages.
 
 
-## forum_index_meta_description
+## index_header
+
+Text to place in forum index header. Can be empty string if not set, in which case `forum_name` should be used instead.
+
+
+## index_meta_description
 
 Forum index Meta Description used as value meta description attribute on forum index.
 
 
-## forum_index_title
+## index_title
 
 Forum index title. Can be empty string if not set, in which case `forum_name` should be used instead.
 
