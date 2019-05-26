@@ -94,7 +94,7 @@ It's impossible to regenerate user avatars store for existing avatars. Misago co
 
 ## `MISAGO_BLANK_AVATAR`
 
-This path to image file that Misago should use as blank avatar.
+This path to static image file that Misago should use as blank avatar. Defaults to `misago/img/blank-avatar.png`.
 
 
 ## `MISAGO_BLEACH_CALLBACKS`

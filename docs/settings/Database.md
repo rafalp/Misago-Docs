@@ -24,6 +24,11 @@ Controls if users may set avatars from outside forums.
 Max allowed size of uploaded avatars in kilobytes.
 
 
+## blank_avatar
+
+Custom blank avatar image.
+
+
 ## default_avatar
 
 Default avatar assigned to new accounts. Can be either `initials` for randomly generated pic with initials, `gravatar` or `gallery` which will make Misago pick random avatar from gallery instead.
