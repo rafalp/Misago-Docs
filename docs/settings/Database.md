@@ -44,6 +44,16 @@ Complete HTTP address to your Misago site homepage. Misago relies on this addres
 Forum name, displayed in titles of pages.
 
 
+## google_site_verification
+
+Site verification token used to create Google Search Console verification page.
+
+
+## google_tracking_id
+
+Google Analytics Tracking ID to include in generated HTML.
+
+
 ## index_header
 
 Text to place in forum index header. Can be empty string if not set, in which case `forum_name` should be used instead.
