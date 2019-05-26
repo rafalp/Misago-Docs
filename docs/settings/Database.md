@@ -84,6 +84,21 @@ Small logo image displayed in forum's compact navbar. When set, it's used instea
 Text displayed in forum's navbar. This text is never included in compact navbar used on small displays.
 
 
+## og_image
+
+User uploaded Open Graph image that will be used instead of default one.
+
+
+## og_image_avatar_on_profile
+
+Controls if user avatar should be used as OG image for user profiles.
+
+
+## og_image_avatar_on_thread
+
+Controls if thread starter's avatar should be used as OG image for threads. If thread starter's account was deleted, default OG image will be used instead.
+
+
 ## post_length_max
 
 Maximal allowed post content length.
