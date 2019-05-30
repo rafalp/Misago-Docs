@@ -170,7 +170,7 @@ List of functions to be called when somebody attempts to register on forums usin
 
 ## `MISAGO_NOTIFICATIONS_MAX_AGE`
 
-Max age, in days, of notifications stored in database. Notifications older than this will be delted.
+Max age, in days, of notifications stored in database. Notifications older than this will be deleted.
 
 
 ## `MISAGO_POST_SEARCH_FILTERS`
