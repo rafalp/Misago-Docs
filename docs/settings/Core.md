@@ -102,20 +102,6 @@ This path to static image file that Misago should use as blank avatar. Defaults 
 Custom callbacks for `bleach` to customize automatic links substitution with `bleach.linkify`.
 
 
-## `MISAGO_COMPACT_DATE_FORMAT_DAY_MONTH`
-
-Date format used by Misago `compact_date` filter for dates in this year.
-
-Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
-
-
-## `MISAGO_COMPACT_DATE_FORMAT_DAY_MONTH_YEAR`
-
-Date format used by Misago `compact_date` filter for dates in past years.
-
-Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
-
-
 ## `MISAGO_DELETE_NEW_INACTIVE_USERS_OLDER_THAN_DAYS`
 
 Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
@@ -185,11 +171,6 @@ List of functions to be called when somebody attempts to register on forums usin
 ## `MISAGO_NOTIFICATIONS_MAX_AGE`
 
 Max age, in days, of notifications stored in database. Notifications older than this will be delted.
-
-
-## `MISAGO_POST_ATTACHMENTS_LIMIT`
-
-Limit of attachments that may be uploaded in single post. Lower limits may hamper image-heavy forums, but help keep memory usage by posting process. 
 
 
 ## `MISAGO_POST_SEARCH_FILTERS`

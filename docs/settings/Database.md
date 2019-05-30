@@ -104,6 +104,11 @@ Controls if user avatar should be used as OG image for user profiles.
 Controls if thread starter's avatar should be used as OG image for threads. If thread starter's account was deleted, default OG image will be used instead.
 
 
+## post_attachments_limit
+
+Limit of attachments per single post.
+
+
 ## post_length_max
 
 Maximal allowed post content length.
