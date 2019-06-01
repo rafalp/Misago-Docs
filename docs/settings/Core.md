@@ -109,11 +109,6 @@ Controls how many days will Misago wait for user or admin to activate newly regi
 To disable automatic deletion of new user accounts, change this setting to 0.
 
 
-## `MISAGO_DIALY_POST_LIMIT`
-
-Dialy limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
-
-
 ## `MISAGO_DYNAMIC_AVATAR_DRAWER`
 
 Function used to create unique avatar for this user. Allows for customization of algorithm used to generate those.
@@ -136,11 +131,6 @@ Enables users to learn what data about them is being held by the site without ha
 Misago reads events to display in separate database query to avoid situation when thread with large number of eg. moderator actions displays pages consisting exclusively of events. Using this setting you may specify upper limit of events displayed on thread's single page. This setting is intented as fail safe, both to save threads from excessively long lists of events your users will have to scroll trough, as well as to keep memory usage within limts.
 
 In case of more events than specified being found, oldest events will be truncated.
-
-
-## `MISAGO_HOURLY_POST_LIMIT`
-
-Hourly limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
 
 
 ## `MISAGO_IP_STORE_TIME`
@@ -166,11 +156,6 @@ List of Moment.js locals available.
 ## `MISAGO_NEW_REGISTRATIONS_VALIDATORS`
 
 List of functions to be called when somebody attempts to register on forums using registration form.
-
-
-## `MISAGO_NOTIFICATIONS_MAX_AGE`
-
-Max age, in days, of notifications stored in database. Notifications older than this will be deleted.
 
 
 ## `MISAGO_POST_SEARCH_FILTERS`

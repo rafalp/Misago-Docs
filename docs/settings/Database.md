@@ -29,6 +29,11 @@ Max allowed size of uploaded avatars in kilobytes.
 Custom blank avatar image.
 
 
+## daily_post_limit
+
+Daily limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bots. Change to 0 to lift this restriction.
+
+
 ## default_avatar
 
 Default avatar assigned to new accounts. Can be either `initials` for randomly generated pic with initials, `gravatar` or `gallery` which will make Misago pick random avatar from gallery instead.
