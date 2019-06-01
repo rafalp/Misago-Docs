@@ -19,6 +19,16 @@ Preffered way in which new user accounts are activated. Can be either of those:
 Controls if users may set avatars from outside forums.
 
 
+## attachment_403_image
+
+Custom image served by the attachments proxy when user has no permission to see the attachment.
+
+
+## attachment_404_image
+
+Custom image served by the attachments proxy when attachment does not exist.
+
+
 ## avatar_upload_limit
 
 Max allowed size of uploaded avatars in kilobytes.

@@ -4,16 +4,6 @@ Core Settings
 Those settings are set in `settings.py` file with defaults defined in `misago.conf.defaults` module. 
 
 
-## `MISAGO_403_IMAGE`
-
-Url (relative to `STATIC_URL`) to file that should be served if user has no permission to see requested attachment.
-
-
-## `MISAGO_404_IMAGE`
-
-Url (relative to `STATIC_URL`) to file that should be served if user has requested nonexistant attachment.
-
-
 ## `MISAGO_ACL_EXTENSIONS`
 
 List of Misago ACL framework extensions.
@@ -44,6 +34,16 @@ Maximum allowed lenght of inactivity period between two requests to admin namesp
 ## `MISAGO_ANONYMOUS_USERNAME`
 
 Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Ghost".
+
+
+## `MISAGO_ATTACHMENT_403_IMAGE_IMAGE`
+
+Default file that should be served if user has no permission to see requested attachment.
+
+
+## `MISAGO_ATTACHMENT_404_IMAGE_IMAGE`
+
+Default file that should be served if user has requested nonexistant attachment.
 
 
 ## `MISAGO_ATTACHMENT_IMAGE_SIZE_LIMIT`
