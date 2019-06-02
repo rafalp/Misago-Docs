@@ -172,3 +172,12 @@ Maximal allowed username length.
 
 Minimal allowed username length.
 
+
+## users_per_page
+
+Controls pagination of users lists.
+
+
+## users_per_page_tail
+
+Value of `orphans` argument used in pagination.

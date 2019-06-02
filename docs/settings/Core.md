@@ -301,8 +301,3 @@ Defaults to 48 hours, but actual time depends on how often `expireuserdatadownlo
 ## `MISAGO_USER_DATA_DOWNLOADS_WORKING_DIR`
 
 Path to the directory that Misago should use to prepare user data downloads. Should not be accessible from internet.
-
-
-## `MISAGO_USERS_PER_PAGE`
-
-Controls pagination of users lists.
