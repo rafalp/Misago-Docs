@@ -213,11 +213,6 @@ This setting controls maximum age in days of items that should count to ranking.
 Maximum number of items on ranking page.
 
 
-## `MISAGO_READTRACKER_CUTOFF`
-
-Controls amount of data used by readtracking system. All content older than number of days specified in this setting is considered old and read, even if opposite is true. Active forums can try lowering this value while less active ones may wish to increase it instead.
-
-
 ## `MISAGO_SEARCH_CONFIG`
 
 PostgreSQL text search configuration to use in searches. Defaults to "simple", for list of installed configurations run "\dF" in "psql".

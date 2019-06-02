@@ -134,6 +134,11 @@ Maximal allowed post content length.
 Minimal allowed post content length.
 
 
+## readtracker_cutoff
+
+Controls amount of data used by read tracking system. All content older than number of days specified in this setting is considered old and read, even if the opposite is true for the user. Active forums can try lowering this value while less active ones may wish to increase it instead. 
+
+
 ## signature_length_max
 
 Maximal allowed length of users signatures.
