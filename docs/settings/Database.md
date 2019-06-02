@@ -163,6 +163,11 @@ Maximal allowed thread title length.
 Minimal allowed thread title length.
 
 
+## unused_attachments_lifetime
+
+Period of time (in hours) after which user-uploaded file that wasn't attached to any post is deleted.
+
+
 ## username_length_max
 
 Maximal allowed username length.
