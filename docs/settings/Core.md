@@ -121,13 +121,6 @@ This mechanism doesn't delete user posts, polls or attachments, but attempts to 
 Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
 
 
-## `MISAGO_EVENTS_PER_PAGE`
-
-Misago reads events to display in separate database query to avoid situation when thread with large number of eg. moderator actions displays pages consisting exclusively of events. Using this setting you may specify upper limit of events displayed on thread's single page. This setting is intented as fail safe, both to save threads from excessively long lists of events your users will have to scroll trough, as well as to keep memory usage within limts.
-
-In case of more events than specified being found, oldest events will be truncated.
-
-
 ## `MISAGO_IP_STORE_TIME`
 
 Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
@@ -166,16 +159,6 @@ List of post validators used to validate posts.
 ## `MISAGO_POSTING_MIDDLEWARES`
 
 List of middleware classes participating in posting process.
-
-
-## `MISAGO_POSTS_PER_PAGE`
-
-Controls number of posts displayed on thread page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
-
-
-## `MISAGO_POSTS_TAIL`
-
-Defines minimal number of posts for thread's last page. If number of posts on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
 
 
 ## `MISAGO_PROFILE_FIELDS`
@@ -259,11 +242,6 @@ This dict allows you override some CSS classes used by Misago in its style. For 
 ## `MISAGO_THREADS_ON_INDEX`
 
 Change this setting to `False` to display categories list instead of threads list on board index.
-
-
-## `MISAGO_THREADS_TAIL`
-
-Defines minimal number of threads for lists last page. If number of threads on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
 
 
 ## `MISAGO_THREAD_TYPES`

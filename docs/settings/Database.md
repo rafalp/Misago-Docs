@@ -54,6 +54,13 @@ Default avatar assigned to new accounts. Can be either `initials` for randomly g
 Default timezone used by guests and newly registered users that haven't changed their timezone prefferences.
 
 
+## events_per_page
+
+Misago reads events to display in separate database query to avoid situation when thread with large number of eg. moderator actions displays pages consisting exclusively of events. Using this setting you may specify upper limit of events displayed on thread's single page. This setting is intended as fail safe, both to save threads from excessively long lists of events your users will have to scroll trough, as well as to keep memory usage within limts.
+
+In case of more events than specified being found, oldest events will be truncated.
+
+
 ## forum_addess
 
 Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to the site users.
@@ -132,6 +139,16 @@ Maximal allowed post content length.
 ## post_length_min
 
 Minimal allowed post content length.
+
+
+## posts_per_page
+
+Controls number of posts displayed on thread page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
+
+
+## posts_per_page_tail
+
+Defines minimal number of posts for thread's last page. If number of posts on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
 
 
 ## readtracker_cutoff
