@@ -261,11 +261,6 @@ This dict allows you override some CSS classes used by Misago in its style. For 
 Change this setting to `False` to display categories list instead of threads list on board index.
 
 
-## `MISAGO_THREADS_PER_PAGE`
-
-Controls number of threads displayed on page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
-
-
 ## `MISAGO_THREADS_TAIL`
 
 Defines minimal number of threads for lists last page. If number of threads on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.

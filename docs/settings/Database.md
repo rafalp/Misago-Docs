@@ -139,6 +139,11 @@ Minimal allowed post content length.
 Controls amount of data used by read tracking system. All content older than number of days specified in this setting is considered old and read, even if the opposite is true for the user. Active forums can try lowering this value while less active ones may wish to increase it instead. 
 
 
+## threads_per_page
+
+Controls number of threads displayed on page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
+
+
 ## signature_length_max
 
 Maximal allowed length of users signatures.
