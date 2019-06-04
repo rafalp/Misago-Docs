@@ -146,7 +146,7 @@ Minimal allowed post content length.
 Controls number of posts displayed on thread page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
 
 
-## posts_per_page_tail
+## posts_per_page_orphans
 
 Defines minimal number of posts for thread's last page. If number of posts on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
 
@@ -210,6 +210,6 @@ Minimal allowed username length.
 Controls pagination of users lists.
 
 
-## users_per_page_tail
+## users_per_page_orphans
 
 Value of `orphans` argument used in pagination.
