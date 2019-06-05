@@ -200,6 +200,16 @@ Maximal allowed thread title length.
 Minimal allowed thread title length.
 
 
+## top_posters_ranking_length
+
+This setting controls maximum age in days of posts that should count to the top posters ranking.
+
+
+## top_posters_ranking_size
+
+Maximum number of users in top posters ranking.
+
+
 ## unused_attachments_lifetime
 
 Period of time (in hours) after which user-uploaded file that wasn't attached to any post is deleted.
