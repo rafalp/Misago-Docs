@@ -166,6 +166,16 @@ Controls number of threads displayed on page. Greater numbers can increase numbe
 Maximal allowed length of users signatures.
 
 
+## stop_forum_spam
+
+This settings allows you to decide whether or not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
+
+
+## stop_forum_spam_confidence
+
+Minimum confidence returned by [Stop Forum Spam](http://www.stopforumspam.com/) for Misago to reject new registration and block the IP address for 1 day.
+
+
 ## subscribe_reply
 
 Default value for automatic subscription to replied threads prefference for new user accounts. Its value represents one of those settings:

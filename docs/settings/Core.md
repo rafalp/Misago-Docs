@@ -225,11 +225,6 @@ This setting allows you to override social auth backend name displayed in Misago
     }
 
 
-## `MISAGO_STOP_FORUM_SPAM_MIN_CONFIDENCE`
-
-Minimum confidence returned by [Stop Forum Spam](http://www.stopforumspam.com/) for Misago to reject new registration and block IP address for 1 day.
-
-
 ## `MISAGO_STYLE`
 
 This dict allows you override some CSS classes used by Misago in its style. For example, to specify custom CSS classess to use in Misago's navbar, you may add following to your `settings.py`:
@@ -247,11 +242,6 @@ Change this setting to `False` to display categories list instead of threads lis
 ## `MISAGO_THREAD_TYPES`
 
 List of clasess defining thread types.
-
-
-## `MISAGO_USE_STOP_FORUM_SPAM`
-
-This settings allows you to decide wheter of not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
 
 
 ## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_IN_HOURS`
