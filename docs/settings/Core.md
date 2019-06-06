@@ -109,13 +109,6 @@ To disable automatic deletion of new user accounts, change this setting to 0.
 Function used to create unique avatar for this user. Allows for customization of algorithm used to generate those.
 
 
-## `MISAGO_ENABLE_DELETE_OWN_ACCOUNT`
-
-Lets users delete their own account on the site without having to contact site administrators.
-
-This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
-
-
 ## `MISAGO_IP_STORE_TIME`
 
 Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.

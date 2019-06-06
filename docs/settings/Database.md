@@ -24,6 +24,13 @@ Controls if users may set avatars from outside forums.
 Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
 
 
+## allow_delete_own_account
+
+Lets users delete their own account on the site without having to contact site administrators.
+
+This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
+
+
 ## attachment_403_image
 
 Custom image served by the attachments proxy when user has no permission to see the attachment.
