@@ -66,6 +66,11 @@ Default avatar assigned to new accounts. Can be either `initials` for randomly g
 Default timezone used by guests and newly registered users that haven't changed their timezone prefferences.
 
 
+## enable_stop_forum_spam
+
+This settings allows you to decide whether or not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
+
+
 ## events_per_page
 
 Misago reads events to display in separate database query to avoid situation when thread with large number of eg. moderator actions displays pages consisting exclusively of events. Using this setting you may specify upper limit of events displayed on thread's single page. This setting is intended as fail safe, both to save threads from excessively long lists of events your users will have to scroll trough, as well as to keep memory usage within limts.
@@ -176,11 +181,6 @@ Controls number of threads displayed on page. Greater numbers can increase numbe
 ## signature_length_max
 
 Maximal allowed length of users signatures.
-
-
-## stop_forum_spam
-
-This settings allows you to decide whether or not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
 
 
 ## stop_forum_spam_confidence
