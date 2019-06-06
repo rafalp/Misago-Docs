@@ -19,6 +19,11 @@ Preffered way in which new user accounts are activated. Can be either of those:
 Controls if users may set avatars from outside forums.
 
 
+## allow_data_downloads
+
+Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
+
+
 ## attachment_403_image
 
 Custom image served by the attachments proxy when user has no permission to see the attachment.
@@ -42,6 +47,13 @@ Custom blank avatar image.
 ## daily_post_limit
 
 Daily limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bots. Change to 0 to lift this restriction.
+
+
+## data_downloads_expiration
+
+Number of hours for which user data should be available for download. When data download is marked as expired, data archive associated with it is deleted.
+
+Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is set to be ran.
 
 
 ## default_avatar

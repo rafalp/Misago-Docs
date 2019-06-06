@@ -116,11 +116,6 @@ Lets users delete their own account on the site without having to contact site a
 This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
 
 
-## `MISAGO_ENABLE_DOWNLOAD_OWN_DATA`
-
-Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
-
-
 ## `MISAGO_IP_STORE_TIME`
 
 Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
@@ -231,13 +226,6 @@ Change this setting to `False` to display categories list instead of threads lis
 ## `MISAGO_THREAD_TYPES`
 
 List of clasess defining thread types.
-
-
-## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_IN_HOURS`
-
-Number of hours for which user data should be available for download. When data download is marked as expired, data archive associated with it is deleted.
-
-Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is set to be ran.
 
 
 ## `MISAGO_USER_DATA_DOWNLOADS_WORKING_DIR`
