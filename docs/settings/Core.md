@@ -97,13 +97,6 @@ This path to static image file that Misago should use as blank avatar. Defaults 
 Custom callbacks for `bleach` to customize automatic links substitution with `bleach.linkify`.
 
 
-## `MISAGO_DELETE_NEW_INACTIVE_USERS_OLDER_THAN_DAYS`
-
-Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
-
-To disable automatic deletion of new user accounts, change this setting to 0.
-
-
 ## `MISAGO_DYNAMIC_AVATAR_DRAWER`
 
 Function used to create unique avatar for this user. Allows for customization of algorithm used to generate those.

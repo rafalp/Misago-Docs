@@ -135,6 +135,13 @@ Small logo image displayed in forum's compact navbar. When set, it's used instea
 Text displayed in forum's navbar. This text is never included in compact navbar used on small displays.
 
 
+## new_inactive_accounts_delete
+
+Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
+
+To disable automatic deletion of new user accounts, change this setting to 0.
+
+
 ## og_image
 
 User uploaded Open Graph image that will be used instead of default one.
