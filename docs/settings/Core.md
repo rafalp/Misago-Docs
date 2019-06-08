@@ -31,11 +31,6 @@ Path prefix for Misago administration backend. Defautly "admincp", but you may s
 Maximum allowed lenght of inactivity period between two requests to admin namespaces. If its exceeded, user will be asked to sign in again to admin backed before being allowed to continue activities.
 
 
-## `MISAGO_ANONYMOUS_USERNAME`
-
-Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Ghost".
-
-
 ## `MISAGO_ATTACHMENT_403_IMAGE_IMAGE`
 
 Default file that should be served if user has no permission to see requested attachment.

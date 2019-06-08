@@ -31,6 +31,11 @@ Lets users delete their own account on the site without having to contact site a
 This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
 
 
+## anonymous_username
+
+Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Removed".
+
+
 ## attachment_403_image
 
 Custom image served by the attachments proxy when user has no permission to see the attachment.
