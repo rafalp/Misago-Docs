@@ -33,7 +33,7 @@ This mechanism doesn't delete user posts, polls or attachments, but attempts to 
 
 ## anonymous_username
 
-Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Removed".
+Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Deleted".
 
 
 ## attachment_403_image
