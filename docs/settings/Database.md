@@ -105,6 +105,11 @@ Site verification token used to create Google Search Console verification page.
 Google Analytics Tracking ID to include in generated HTML.
 
 
+## ip_storage_time
+
+Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to 0 to never remove old IP addresses stored in your database.
+
+
 ## index_header
 
 Text to place in forum index header. Can be empty string if not set, in which case `forum_name` should be used instead.

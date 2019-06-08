@@ -102,11 +102,6 @@ Custom callbacks for `bleach` to customize automatic links substitution with `bl
 Function used to create unique avatar for this user. Allows for customization of algorithm used to generate those.
 
 
-## `MISAGO_IP_STORE_TIME`
-
-Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
-
-
 ## `MISAGO_LOGIN_API_URL`
 
 URL to API endpoint used to authenticate sign-in credentials. Musn't contain api prefix or wrapping slashes. Defaults to 'auth/login'.
