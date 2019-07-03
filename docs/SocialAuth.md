@@ -61,74 +61,22 @@ Those are the values that you will need to enter in your Misago ``settings.py`` 
 
 ### Enabling GitHub authentication on Misago
 
-Now open your Misago ``settings.py`` in code editor and find the ``AUTHENTICATION_BACKENDS`` setting. By default it looks like this:
+Go to your forum's Admin Control Panel, click "Settings" in menu on the left, then navigate to "Social login".
 
-```python
-AUTHENTICATION_BACKENDS = [
-    'misago.users.authbackends.MisagoBackend',
-]
-```
+![Social login](./images/SocialAuth/github_step_4.jpg)
 
-You will need to module that will handle GitHub authentication to this list. Go to [list of backends implemented by Python Social Auth](http://python-social-auth.readthedocs.io/en/latest/backends/index.html) and find "GitHub" on it:
+You will see two lists: enabled login methods and "setup new login method". Find "GitHub" on the latter, and click on it.
 
-![GitHub App Settings](./images/SocialAuth/github_step_4.jpg)
+"Setup social login" form will be displayed, enabling you to configure new admin method:
 
-This is suprising. Looks like there is not one but 7 GitHub backends available. Click the first one, named simply "GitHub", and this will take you to [documentation](http://python-social-auth.readthedocs.io/en/latest/backends/github.html) explaining how to add GitHub auth in your site:
+![Setup social login](./images/SocialAuth/github_step_5.jpg)
 
-![GitHub Backend Settings](./images/SocialAuth/github_step_5.jpg)
+Copy the "Client ID" and "Client Secret" from GitHub into the form and change "Enable this provider" to "yes", then click the "Save changes" button.
 
-As it says, you should add ``'social_core.backends.github.GithubOAuth2',`` to your ``AUTHENTICATION_BACKENDS``:
+"GitHub" method will now appear on the enabled methods list:
 
-```python
-AUTHENTICATION_BACKENDS = [
-    'misago.users.authbackends.MisagoBackend',
-    'social_core.backends.github.GithubOAuth2',
-]
-```
+![Social login updated](./images/SocialAuth/github_step_6.jpg)
 
-And you should add ``SOCIAL_AUTH_GITHUB_KEY`` and ``SOCIAL_AUTH_GITHUB_SECRET`` at end of your ``settings.py`` using Client ID and Secret that GitHub has given you ealier:
+Finally, "Sign in with GitHub" option will display on login and registration forms:
 
-```python
-# GitHub OAuth
-
-SOCIAL_AUTH_GITHUB_KEY = '53b098f7d772fc196389'
-SOCIAL_AUTH_GITHUB_SECRET = 'cddceb4164d897485e76d69751e9e20eb50114c3'
-```
-
-Lastly, we would like to tell GitHub to pass user email and profile details when user signs in, so add one more line to your settings:
-
-```python
-# GitHub OAuth
-
-SOCIAL_AUTH_GITHUB_KEY = '53b098f7d772fc196389'
-SOCIAL_AUTH_GITHUB_SECRET = 'cddceb4164d897485e76d69751e9e20eb50114c3'
-SOCIAL_AUTH_GITHUB_SCOPE = ['read:user', 'user:email']
-```
-
-GitHub verifies that user email address is correct before passing it to other application. We can use this fact to tell Misago that if email returned by GitHub already exists in Misago database, user should be signed in to this account instead of being asked to enter new e-mail. Find your ``SOCIAL_AUTH_PIPELINE``, inside of it you will find line like this:
-
-```python
-SOCIAL_AUTH_PIPELINE = (
-    # ...some other lines
-
-    # Uncomment next line to let your users to associate their old forum account with social one.
-    # 'misago.users.social.pipeline.associate_by_email',
-
-    # ...some other lines
-)
-```
-
-Like comment says, remove the ``#`` sign from before the ``'misago.users.social.pipeline.associate_by_email',`` so it looks like this:
-
-```python
-SOCIAL_AUTH_PIPELINE = (
-    # ...some other lines
-
-    # Uncomment next line to let your users to associate their old forum account with social one.
-    'misago.users.social.pipeline.associate_by_email',
-
-    # ...some other lines
-)
-```
-
-Now you are finished. Save your changes and restart your Misago to reload settings. "Sign in with GitHub" button will now appear on your login and registration forms.
+![New login option appearing in the UI](./images/SocialAuth/github_step_7.jpg)
