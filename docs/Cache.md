@@ -1,109 +1,81 @@
 Cache
 =====
 
-Misago uses caching aggressivelly to save costful operations results like users ACLs resolution. Setting up cache, perfectly memory based one like Memcached is great way to speed up your forum and cut down database traffic.
+Misago uses caching aggressively to save and re-use results of costful operations like users ACLs resolution.
+
+Setting up cache - ideally memory based one like Redis - is great way to speed up your forum and cut down database traffic.
+
+> **Note:** If you are using Misago-Docker, this is already done without any additional configuration.
 
 
-## Setting up Misago-only cache
+## Cache versioning
 
-You can make Misago use its own cache instead of sharing cache with rest of your Django site. To do so, add new cache named `misago` to your `CACHES` setting:
+The `misago.cache.versions` module implements cache versioning feature. Cache version is string made of 8 random characters that should be included in cache key, or as value of `version` named argument on `cache.set` and `cache.get`.
+
+Current cache versions are available under the `cache_versions` attribute on `request`. It's set by `misago.cache.middleware.cache_versions_middleware` middleware.
+
+
+## Invalidating cache
+
+If you wish to invalidate certain versioned cache, you may do it with `misago.cache.versions.invalidate_cache` function:
 
 ```python
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    },
-    'misago': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11212',
-    }
-}
+from misago.cache.versions import invalidate_cache
+
+
+# Invalidates "bans" cache after creating new ban
+invalidate_cache("bans")
 ```
 
 
-## Cache buster
+## Invalidating all versioned caches
 
-Cache buster is small feature that allows certain cache-based systems find out when data they were dependant on has been changed, making their cache no longer valid.
-
-Cache buster lives in `misago.core.cachebuster` and provides following API:
+Misago provides two ways for invalidating all versioned caches.
 
 
-#### `is_valid(cache_name, version)`
+### Invalidating all versioned caches from python code
 
-Checks if specific cache version is valid or raises ValueError if cache key is invalid.
-
-
-#### `get_version(cache_name)`
-
-Returns current valid cache version as an integer number or raises ValueError if cache key is invalid.
-
-
-#### `invalidate(cache_name)`
-
-Makes specified cache invalid.
-
-
-#### `invalidate_all()`
-
-Makes all versioned caches invalid.
-
-
-### Example usage
-
-Below snippet of code tests if cache version stored on `ban['version']` is current for bans cache:
+All versioned caches can be invalidated by calling `misago.cache.versions.invalidate_all_caches`:
 
 ```python
-bans_cache_version = get_version('bans')
-if not cachebuster.is_valid('bans', ban['version']):
-    raise RuntimeError("ban was set before cache got invalidated and needs to be re-checked!")
+from misago.cache.versions import invalidate_all_caches
+
+invalidate_all_caches()
 ```
 
 
-### Adding Custom Cache Buster
+### Invalidating all versioned caches using management command
 
-You may add and remove your own cache names to cache buster by using following commands:
+Misago has management command that can be executed from console to invalidate all versioned caches:
 
-
-##### Note
-
-Don't forget to call `invalidate_all` function after adding or removing cache name from buster to force it to rebuild its own cache.
-
-
-#### `register(cache)`
-
-Registers new cache in cache buster for tracking.
+```
+python manage.py invalidateversionedcaches
+```
 
 
-#### `unregister(cache)`
+## Versioning new caches
 
-Removes cache from cache buster and disables its tracking. This function will raise `ValueError` if cache you are trying to unregister is not registered.
+`misago.cache.operations` module provides migration operations that allow you to easily add or remove cache versioning:
 
-
-#### Registering cachebusters in migrations
-
-Misago provides the `misago.core.migrationutils.cachebuster_unregister_cache(apps, cache)` utility command for setting cachebusters in migrations, like such:
 
 ```python
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from django.db import migrations
 
-from django.db import migrations, models
-
-from misago.core.migrationutils import cachebuster_register_cache
-
-
-def register_bans_version_tracker(apps, schema_editor):
-    cachebuster_register_cache(apps, 'misago_bans')
+from misago.cache.operations import StartCacheVersioning, StopCacheVersioning
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('misago_core', '0001_initial'),
+        ('misago_cache', '0001_initial'),
     ]
 
     operations = [
-        migrations.RunPython(register_bans_version_tracker),
+        # Starts cache versioning for "my_cache"
+        StartCacheVersioning("my_cache"),
+        # Stop cache versioning "my_cache"
+        StopCacheVersioning("my_cache"),
     ]
-
 ```
+
+In order for your migration to work, you need to declare dependency on `misago_cache` migration no. `0001_initial`.
+

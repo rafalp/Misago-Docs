@@ -1,7 +1,7 @@
-Core Settings
-=============
+Static settings reference
+=======================
 
-Those settings are set in `settings.py` file with defaults defined in `misago.conf.defaults` module. 
+This is the reference of all [static settings](./README.md#static-settings) defined by Misago. Reference of settings defined by Django can be found on [Django documentation](https://docs.djangoproject.com/en/{{ book.django_version }}/ref/settings/).
 
 
 ## `MISAGO_ACL_EXTENSIONS`
@@ -172,16 +172,7 @@ Items in Misago are usually indexed in search engine on save or update. If you c
 
 ## `MISAGO_SLUGIFY`
 
-Path to function or callable used by Misago to generate slugs. Defaults to `misago.core.slugify.default`. Use this function if you want to customize slugs generation on your community.
-
-
-## `MISAGO_STYLE`
-
-This dict allows you override some CSS classes used by Misago in its style. For example, to specify custom CSS classess to use in Misago's navbar, you may add following to your `settings.py`:
-
-    MISAGO_STYLE = {
-        'navbar': 'navbar-dark bg-primary',
-    }
+Path to function or callable used by Misago to generate slugs. Defaults to `misago.static.slugify.default`. Use this function if you want to customize slugs generation on your community.
 
 
 ## `MISAGO_THREADS_ON_INDEX`
