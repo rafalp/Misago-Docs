@@ -18,13 +18,12 @@ Exposes `frontend_context` to templates, allowing you to JSON serialize and pass
 ```
 
 
-## `misago.core.context_processors.site_address`
+## `misago.core.context_processors.request_path`
 
-This function adds `SITE_ADDRESS` value to template context that you can use to build absolue links in your templates:
+This function adds `request_path` value to template context that you can use together with `absoluteurl` tag to build absolute links to current page in your templates:
 
 ```
+{% load misago_absoluteurl %}
 # Will become "http://mysite.com/users/"
-{{ SITE_ADDRESS }}{% url 'misago:users' %}
+{% absoluteurl request_path %}
 ```
-
-This is most useful for links in e-mail templates.

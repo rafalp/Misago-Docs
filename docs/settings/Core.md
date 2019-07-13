@@ -4,24 +4,9 @@ Core Settings
 Those settings are set in `settings.py` file with defaults defined in `misago.conf.defaults` module. 
 
 
-## `MISAGO_403_IMAGE`
-
-Url (relative to `STATIC_URL`) to file that should be served if user has no permission to see requested attachment.
-
-
-## `MISAGO_404_IMAGE`
-
-Url (relative to `STATIC_URL`) to file that should be served if user has requested nonexistant attachment.
-
-
 ## `MISAGO_ACL_EXTENSIONS`
 
 List of Misago ACL framework extensions.
-
-
-## `MISAGO_ADDRESS`
-
-Complete HTTP address to your Misago site homepage. Misago relies on this address to create links in e-mails that are sent to site users.
 
 
 ##### Note
@@ -46,9 +31,14 @@ Path prefix for Misago administration backend. Defautly "admincp", but you may s
 Maximum allowed lenght of inactivity period between two requests to admin namespaces. If its exceeded, user will be asked to sign in again to admin backed before being allowed to continue activities.
 
 
-## `MISAGO_ANONYMOUS_USERNAME`
+## `MISAGO_ATTACHMENT_403_IMAGE_IMAGE`
 
-Anonymous name used to replace deleted user's name in places that are keeping it. Defaults to "Ghost".
+Default file that should be served if user has no permission to see requested attachment.
+
+
+## `MISAGO_ATTACHMENT_404_IMAGE_IMAGE`
+
+Default file that should be served if user has requested nonexistant attachment.
 
 
 ## `MISAGO_ATTACHMENT_IMAGE_SIZE_LIMIT`
@@ -59,11 +49,6 @@ Max dimensions (width and height) of user-uploaded images embedded in posts. If 
 ##### Note
 
 Because user-uploaded GIF's may be smaller than dimensions specified, but still be considerably heavy due to animation, Misago always generates thumbnails for user-uploaded GIFS, stripping the animations from them.
-
-
-## `MISAGO_ATTACHMENT_ORPHANED_EXPIRE`
-
-How old (in minutes) should attachments unassociated with any be before they'll automatically deleted by `clearattachments` task.
 
 
 ## `MISAGO_ATTACHMENT_SECRET_LENGTH`
@@ -99,7 +84,7 @@ It's impossible to regenerate user avatars store for existing avatars. Misago co
 
 ## `MISAGO_BLANK_AVATAR`
 
-This path to image file that Misago should use as blank avatar.
+This path to static image file that Misago should use as blank avatar. Defaults to `misago/img/blank-avatar.png`.
 
 
 ## `MISAGO_BLEACH_CALLBACKS`
@@ -107,64 +92,9 @@ This path to image file that Misago should use as blank avatar.
 Custom callbacks for `bleach` to customize automatic links substitution with `bleach.linkify`.
 
 
-## `MISAGO_COMPACT_DATE_FORMAT_DAY_MONTH`
-
-Date format used by Misago `compact_date` filter for dates in this year.
-
-Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
-
-
-## `MISAGO_COMPACT_DATE_FORMAT_DAY_MONTH_YEAR`
-
-Date format used by Misago `compact_date` filter for dates in past years.
-
-Expects standard Django date format, documented [here](https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date)
-
-
-## `MISAGO_DELETE_NEW_INACTIVE_USERS_OLDER_THAN_DAYS`
-
-Controls how many days will Misago wait for user or admin to activate newly registered account before automatically deleting it. Only accounts requiring activation will be deleted.
-
-To disable automatic deletion of new user accounts, change this setting to 0.
-
-
-## `MISAGO_DIALY_POST_LIMIT`
-
-Dialy limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
-
-
 ## `MISAGO_DYNAMIC_AVATAR_DRAWER`
 
 Function used to create unique avatar for this user. Allows for customization of algorithm used to generate those.
-
-
-## `MISAGO_ENABLE_DELETE_OWN_ACCOUNT`
-
-Lets users delete their own account on the site without having to contact site administrators.
-
-This mechanism doesn't delete user posts, polls or attachments, but attempts to anonymize any data about user left behind after user is deleted.
-
-
-## `MISAGO_ENABLE_DOWNLOAD_OWN_DATA`
-
-Enables users to learn what data about them is being held by the site without having to contact site's administrators. This is provided by the "Download data" option becoming available on the "Change your options" page.
-
-
-## `MISAGO_EVENTS_PER_PAGE`
-
-Misago reads events to display in separate database query to avoid situation when thread with large number of eg. moderator actions displays pages consisting exclusively of events. Using this setting you may specify upper limit of events displayed on thread's single page. This setting is intented as fail safe, both to save threads from excessively long lists of events your users will have to scroll trough, as well as to keep memory usage within limts.
-
-In case of more events than specified being found, oldest events will be truncated.
-
-
-## `MISAGO_HOURLY_POST_LIMIT`
-
-Hourly limit of posts that may be posted from single account. Fail-safe for situations when forum is flooded by spam bot. Change to 0 to lift this restriction.
-
-
-## `MISAGO_IP_STORE_TIME`
-
-Specifies the number of days that IP addresses are stored in the database before being removed by the `removeoldips` management command. Change this setting to `None` or `0` to never remove old IP addresses stored in your database.
 
 
 ## `MISAGO_LOGIN_API_URL`
@@ -187,16 +117,6 @@ List of Moment.js locals available.
 List of functions to be called when somebody attempts to register on forums using registration form.
 
 
-## `MISAGO_NOTIFICATIONS_MAX_AGE`
-
-Max age, in days, of notifications stored in database. Notifications older than this will be delted.
-
-
-## `MISAGO_POST_ATTACHMENTS_LIMIT`
-
-Limit of attachments that may be uploaded in single post. Lower limits may hamper image-heavy forums, but help keep memory usage by posting process. 
-
-
 ## `MISAGO_POST_SEARCH_FILTERS`
 
 List of post search filters that are used to normalize search queries and documents used in forum search engine.
@@ -210,16 +130,6 @@ List of post validators used to validate posts.
 ## `MISAGO_POSTING_MIDDLEWARES`
 
 List of middleware classes participating in posting process.
-
-
-## `MISAGO_POSTS_PER_PAGE`
-
-Controls number of posts displayed on thread page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
-
-
-## `MISAGO_POSTS_TAIL`
-
-Defines minimal number of posts for thread's last page. If number of posts on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
 
 
 ## `MISAGO_PROFILE_FIELDS`
@@ -246,22 +156,6 @@ Should be list of dicts defining `name` key that's string with name of fields gr
     ]
 
 
-## `MISAGO_RANKING_LENGTH`
-
-Some lists act as rankings, displaying users in order of certain scoring criteria, like number of posts or likes received.
-This setting controls maximum age in days of items that should count to ranking.
-
-
-## `MISAGO_RANKING_SIZE`
-
-Maximum number of items on ranking page.
-
-
-## `MISAGO_READTRACKER_CUTOFF`
-
-Controls amount of data used by readtracking system. All content older than number of days specified in this setting is considered old and read, even if opposite is true. Active forums can try lowering this value while less active ones may wish to increase it instead.
-
-
 ## `MISAGO_SEARCH_CONFIG`
 
 PostgreSQL text search configuration to use in searches. Defaults to "simple", for list of installed configurations run "\dF" in "psql".
@@ -281,21 +175,6 @@ Items in Misago are usually indexed in search engine on save or update. If you c
 Path to function or callable used by Misago to generate slugs. Defaults to `misago.core.slugify.default`. Use this function if you want to customize slugs generation on your community.
 
 
-## `MISAGO_SOCIAL_AUTH_BACKENDS_NAMES`
-
-This setting allows you to override social auth backend name displayed in Misago interface to be more descriptive. For example, to rename "Facebook" to "Facebook Connect" and "Google Plus" to "Google+" at same time, add following code to your `settings.py`:
-
-    MISAGO_SOCIAL_AUTH_BACKENDS_NAMES = {
-        'facebook': "Facebook Connect",
-        'google-plus': "Google+",
-    }
-
-
-## `MISAGO_STOP_FORUM_SPAM_MIN_CONFIDENCE`
-
-Minimum confidence returned by [Stop Forum Spam](http://www.stopforumspam.com/) for Misago to reject new registration and block IP address for 1 day.
-
-
 ## `MISAGO_STYLE`
 
 This dict allows you override some CSS classes used by Misago in its style. For example, to specify custom CSS classess to use in Misago's navbar, you may add following to your `settings.py`:
@@ -310,38 +189,11 @@ This dict allows you override some CSS classes used by Misago in its style. For 
 Change this setting to `False` to display categories list instead of threads list on board index.
 
 
-## `MISAGO_THREADS_PER_PAGE`
-
-Controls number of threads displayed on page. Greater numbers can increase number of objects loaded into memory and thus depending on features enabled greatly increase memory usage.
-
-
-## `MISAGO_THREADS_TAIL`
-
-Defines minimal number of threads for lists last page. If number of threads on last page is smaller or equal to one specified in this setting, last page will be appended to previous page instead.
-
-
 ## `MISAGO_THREAD_TYPES`
 
 List of clasess defining thread types.
 
 
-## `MISAGO_USE_STOP_FORUM_SPAM`
-
-This settings allows you to decide wheter of not [Stop Forum Spam](http://www.stopforumspam.com/) database should be used to validate IPs and emails during new users registrations.
-
-
-## `MISAGO_USER_DATA_DOWNLOADS_EXPIRE_IN_HOURS`
-
-Number of hours for which user data should be available for download. When data download is marked as expired, data archive associated with it is deleted.
-
-Defaults to 48 hours, but actual time depends on how often `expireuserdatadownloads` management command is set to be ran.
-
-
 ## `MISAGO_USER_DATA_DOWNLOADS_WORKING_DIR`
 
 Path to the directory that Misago should use to prepare user data downloads. Should not be accessible from internet.
-
-
-## `MISAGO_USERS_PER_PAGE`
-
-Controls pagination of users lists.
