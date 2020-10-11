@@ -41,6 +41,10 @@ Now repeat this action, but enter `www` in "HOSTNAME":
 
 ![Creating www record for domain](../images/Setup/do_step_14.jpg)
 
+> **Warning:** It is required that both `www` and non-`www` domains are configured. HTTPS certificate will be issued for both of them and redirect will be setup for the domain you intent to use for your site from the other domain.
+>
+> If you skip this step HTTPS configuration will fail and NGINX will display error 500 page in place of your site.
+
 Two DNS records should not appear for your domain, one without www, and other with www:
 
 ![Created records](../images/Setup/do_step_15.jpg)
